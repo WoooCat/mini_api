@@ -1,0 +1,39 @@
+swagger: '2.0'
+tags:
+  - Get Report
+consumes:
+  - application/json
+parameters:
+  - name: order
+    in: query
+    type: string
+    required: false
+    enum: ['desc', 'asc']
+    description: Order by (desc or asc).
+  - name: format
+    in: query
+    type: string
+    required: false
+    enum: ['json', 'xml']
+    description: Response format (json or xml).
+responses:
+  200:
+    description: Drivers common statistic in the requested format.
+    schema:
+      type: object
+      properties:
+        position:
+          type: string
+          example: 1
+        name:
+          type: string
+          example: Esteban Ocon
+        drive_id:
+          type: string
+          example: EOF
+        car:
+          type: string
+          example: FORCE INDIA MERCEDES
+        best_time:
+          type: string
+          example: 0:00:13.028000

@@ -1,0 +1,30 @@
+swagger: '2.0'
+tags:
+  - Get Drivers
+consumes:
+  - application/json
+parameters:
+  - name: order
+    in: query
+    type: string
+    required: false
+    enum: ['desc', 'asc']
+    description: Order by (desc or asc).
+  - name: format
+    in: query
+    type: string
+    required: false
+    enum: ['json', 'xml']
+    description: Response format (json or xml).
+responses:
+  200:
+    description: Drivers data in the requested format.
+    schema:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Esteban Ocon
+        drive_id:
+          type: string
+          example: EOF

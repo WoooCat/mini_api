@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "Raport Racing API"
+version = "0.1.0"
+description = "Raport Racing API with SqliteDatabase"
+authors = ["woocat <digtyar.vadim@gmail.com>"]
+readme = "README.md"
+
+[[tool.poetry.source]]
+name = "reportracing"
+url = "https://test.pypi.org/simple/"
+default = false
+secondary = false
+
+[tool.poetry.dependencies]
+python = "^3.10.11"
+pytest = "^7.3.1"
+peewee = "^3.16.2"
+flask = "2.2.3"
+typer = "^0.7.0"
+flasgger = "^0.9.5"
+Flask_RESTful = "^0.3.9"
+dicttoxml = "^1.7.16"
+reportracing = "^1.0.4"
+
+[tool.flake8]
+exclude = '__init__.py'
+max-line-length = 120
+
+[tool.black]
+line-lenght = 120
+exclude = '\.venv/'

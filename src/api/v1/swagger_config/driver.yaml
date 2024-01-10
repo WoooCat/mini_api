@@ -1,0 +1,52 @@
+swagger: '2.0'
+tags:
+  - Get Driver
+consumes:
+  - application/json
+parameters:
+  - name: "driver_id"
+    in: "path"
+    description: "Driver ID"
+    required: true
+    type: "string"
+  - name: format
+    in: query
+    type: string
+    required: false
+    enum: ['json', 'xml']
+    description: Response format (json or xml).
+responses:
+  200:
+    description: Drivers common statistic in the requested format.
+    schema:
+      type: object
+      properties:
+        id:
+          type: int
+          example: 18
+        drive_id:
+          type: string
+          example: EOF
+        name:
+          type: string
+          example: Esteban Ocon
+        car:
+          type: string
+          example: FORCE INDIA MERCEDES
+        start_time:
+          type: string
+          example: 2018-05-24 12:00:00
+        finish_time:
+          type: string
+          example: 2018-05-24 12:01:12.434000
+        best_time:
+          type: string
+          example: 0:01:22.013000
+  404:
+    description: Drivers with thish driver_idnot found.
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          example: "Driver with driver_id: test not found"
